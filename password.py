@@ -1,37 +1,23 @@
-class User:
+class User :
+#this is  a doc string below  here 
+
     """
-    Class that generates new instances of users.
+     Class that generates new instances of User
     """
+    pass
 
-    user_list = [] # Empty  list
+User_list = [] 
 
-    def __init__(self,user_name,account_name,password):
-
-      # docstring removed for simplicity
-
-        self.user_name = user_name
-        self.account_name = account_name
-        self.password =password
-
-def save_user(self):
+def __init__(self,first_name,last_name):
 
         '''
-       saves users  objects into user_list
-        '''
+        __init__ method that helps us define properties for our objects.
 
-        User.user_list.append(self)
-
-
-def delete_user(self):
+        Args:
+            first_name: New contact first name.
+            last_name : New contact last name.
 
         '''
-        delete_user method deletes a saved users  from the user_list
-        '''
-
-       User.user_list.remove(self)
-@classmethod
-def display_user(cls):
-        '''
-        method that returns the users  list
-        '''
-        return cls.user_list
+        self.first_name = first_name
+        self.last_name = last_name
+       
