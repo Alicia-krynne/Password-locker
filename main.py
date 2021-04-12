@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from password import User
 from credentials import Credentials
 
@@ -50,7 +51,7 @@ def main():
                             print ('\n')
 
                    
-                            else:
+                    else:
                                     print('\n')
                                     print(" no credentials available")
                                     print('\n')
