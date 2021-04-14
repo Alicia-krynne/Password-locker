@@ -49,17 +49,10 @@ def main():
                             print ('\n')
                             print(f"New User {f_name} {l_name} created")
                             print ('\n')
-
-                   
-                    else:
-                                    print('\n')
-                                    print(" no credentials available")
-                                    print('\n')
-
-                   
                     elif short_code == "dc":
                             print("Bye .......")
                             break
+
                     else:
                             print("delete  credentials")
 if __name__ == '__main__':
