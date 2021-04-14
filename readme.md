@@ -7,7 +7,7 @@ This Project  allows users to manage thwir passwords.
 # HOW TO ACCESS THE PAGE 
  clone in to  my  repo provided at  :https://github.com/Alicia-krynne/Password-locker.git 
  then  navigate  to  the  main.py  folder  and  run it  in the  terminal.
- also  on  your  terminal, navigate  to  the  cloned  directory  and  and  run  python(version of  python) main.py
+ also  on  your  terminal, navigate  to  the  cloned  directory on  your  terminal  and  enter  ./main.py
  
 ## LANGUAGES USED TO  MAKE THE PAGE:
 1. Python 

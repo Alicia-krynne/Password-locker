@@ -22,7 +22,7 @@ def find_user_by_email(email):
     return User.find_user_by_email
     
 
-def new_credentials(name,website,password):
+def new_credentials(credentials):
     new_credentials = Credentials()
     return new_credentials
 
@@ -58,11 +58,12 @@ def main():
             print('\n')
 
             while True:
-                    print("Action: 1 - create a new credentials,2- show credentials, 3- find  credentials 4- exit",)
+                    print( " cn- create new credentials,sc- show credentials,fc- find credentials, ex- exit",)
 
-                    short_code = int(input())
+                    short_code = input().lower()
+                    
 
-                    if short_code == '1':  #created  and  saved the  credentials
+                    if short_code == 'cn':  #created  and  saved the  credentials
                             print("new_credentials")
                             print("-"*10)
 
@@ -75,12 +76,11 @@ def main():
                             print("password ...")
                             password = input()
 
-                          
-                            save_credentials(create_user(name,website,password)) 
+                            save_credentials(new_credentials(name,website,password)) 
                             print ('\n')
                             print(f" new Credentials {name} {website} {password} created")
                             print ('\n')
-                    elif short_code == '2':
+                    elif short_code == 'sc':
                             if show_credentials():
                                     print("Here  you  go ^_^")
                                     print('\n')
@@ -94,7 +94,7 @@ def main():
                                     print("no  credentials, try  adding")
                                     print('\n')
 
-                    elif short_code == '3':
+                    elif short_code == 'fc':
 
                             print("Enter the credentials you want to search for")
 
@@ -110,9 +110,10 @@ def main():
                                    
                             else:
                                     print("That  entry does not exist")
-                    elif short_code == '4':
+                    elif short_code == 'ex':
                             print("Bye  have  a  swell  day .......")
                             break
+                   
                     else:
                             print("I really didn't get that. Please use the short codes")
 
