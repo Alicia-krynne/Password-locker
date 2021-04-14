@@ -26,3 +26,12 @@ class Credentials :
             if credential.website == website:
                 return credential # this  loop  goes thru  all  user info to  find  the  email and  return  their   full details
     
+
+  @classmethod # to  allow input
+  def credentials_available(cls,website):
+        for credential in cls.credentials_list:
+            if credential.website == website:
+                return True
+        return False
+
+ 

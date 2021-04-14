@@ -41,7 +41,13 @@ class TestCredentials(unittest.TestCase):
     find_credential = Credentials.search_credential_by_website("weverse")
     self.assertEqual(find_credential.website,newCredential.website)
 
+  def test_credentials_available(self):
+    self.new_credentials.save_credentials()
+    newCredential = Credentials("namjoon","weverse","bangtan613")
+    newCredential.save_credentials()
 
+    credentials_available = Credentials.credentials_available("weverse")
+    self.assertTrue(credentials_available)
 
 
 
