@@ -15,6 +15,7 @@ class User :
         Args:
             first_name: New user first name.
             last_name : New user last name.
+            
 
         '''
         self.first_name = first_name

@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 from password import User
 from credentials import Credentials
+import pyperclip 
 
-def create_user(fname,lname,phone):
+def create_user(first_name,last_name,email,password):
     '''
     Function to create a new user
     '''
-    new_user = user(fname,lname)
-    return new_contact
+    new_user = user()
+    return new_user
+
+    
 def save_credentials (credential):
     '''
     Function to save a credential
