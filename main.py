@@ -1,63 +1,124 @@
 #!/usr/bin/env python3
-from password import User
+from user import User
 from credentials import Credentials
-import pyperclip 
 
 def create_user(first_name,last_name,email,password):
     '''
     Function to create a new user
     '''
-    new_user = user()
+    new_user = User()
     return new_user
 
+
+def save_user(user):
+    User.user_list.append(self)
+
+
+def delete_user(user):
+    User.user_list.remove(self)
+
+
+def find_user_by_email(email):
+    return User.find_user_by_email
     
-def save_credentials (credential):
+
+def new_credentials(name,website,password):
+    new_credentials = Credentials()
+    return new_credentials
+
+def save_credentials (credentials):
     '''
     Function to save a credential
     '''
-    credential.save_credentials()
-def del_crdentials(credential):
+    Credentials.save_credentials()
+
+
+def remove_credentials(credentials):
     '''
     Function to delete a credential
     '''
-    credential.delete_credentials()
+    Credentials.remove_credentials()
+
+def credentials_available(website):
+    return Credentials.search_credential_by_website
+
+    """
+    function  to  search  a credential
+    """
+
+def show_credentials(credentials):
+    return Credentials.show_credentials
+    
 
 def main():
             print("Hello Welcome  What is your name?")
-            user_name = input()
+            new_user = input()
 
-            print(f"Hello {user_name}. Choose action")
+            print(f"Hello {new_user}. Choose action")
             print('\n')
 
             while True:
-                    print("Action: cd - create a new credentials, dc - delete credentials,sc -  save credential ")
+                    print("Action: 1 - create a new credentials,2- show credentials, 3- find  credentials 4- exit",)
 
-                    short_code = input().lower()
+                    short_code = input().number()
 
-                    if short_code == 'cd':
-                            print("New Credentials")
+                    if short_code == '1':  #created  and  saved the  credentials
+                            print("new_credentials")
                             print("-"*10)
 
-                            print ("First name ....")
-                            f_name = input()
+                            print ("name....")
+                            name = input()
 
-                            print("Last name ...")
-                            l_name = input()
+                            print("website ...")
+                            website = input()
 
-                            print("Phone number ...")
-                            p_number = input()
+                            print("password ...")
+                            password = input()
 
                           
-                            save_credentials(create_user(f_name,l_name,p_number)) 
+                            save_credentials(create_user(name,website,password)) 
                             print ('\n')
-                            print(f"New User {f_name} {l_name} created")
+                            print(f" new Credentials {name} {website} {password} created")
                             print ('\n')
-                    elif short_code == "dc":
-                            print("Bye .......")
-                            break
+                    elif short_code == "2":
+                        if show_credentials():
+                                    print("Here  you  go ^_^")
+                                    print('\n')
 
-                    else:
-                            print("delete  credentials")
+                                    for credentials in show_credentials():
+                                            print(f"{credentials.name} {credentials.website} .....{credentials.password}")
+
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print("no  credentials, try  adding")
+                                    print('\n')
+
+                    elif short_code == '3':
+
+                            print("Enter the credentials you want to search for")
+
+                            credentials_available = input()
+                            if search_credential_by_website(search_credential_by_website):
+                                    search_credential_by_website= find_credentials(search_credential_by_website)
+                                    print(f"{find_credential.name} {find_credential.website} {find_credential.password}")
+                                    print('-' * 20)
+
+                                    print(f"name .......{find_credential.name}")
+                                    print(f"website.......{find_credential.website}")
+                                      print(f"password.......{find_credential.password}")
+                                   
+                            else:
+                                    print("That  entry does not exist")
+                     elif short_code == "4:
+                            print("Bye  have  a  swell  day .......")
+                            break
+                            else:
+                            print("I really didn't get that. Please use the short codes")
+                            
+                            
+
+                    
 if __name__ == '__main__':
 
     main()
