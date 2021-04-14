@@ -18,4 +18,11 @@ class Credentials :
 
   def remove_credentials(self):
           Credentials.credentials_list.remove(self)
-          
+
+
+  @classmethod  # after  calling the  class method, always  asign the  key  word cls to the  funtion
+  def search_credential_by_website(cls,website):
+        for credential in cls.credentials_list:
+            if credential.website == website:
+                return credential # this  loop  goes thru  all  user info to  find  the  email and  return  their   full details
+    

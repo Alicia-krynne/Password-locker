@@ -33,6 +33,13 @@ class TestCredentials(unittest.TestCase):
     newCredential.remove_credentials()
     self.assertEqual(len(Credentials.credentials_list),1)
 
+  def test_search_credential_by_website(self):
+    self.new_credentials.save_credentials()
+    newCredential = Credentials("namjoon","weverse","bangtan613")
+    newCredential.save_credentials()
+
+    find_credential = Credentials.search_credential_by_website("weverse")
+    self.assertEqual(find_credential.website,newCredential.website)
 
 
 
