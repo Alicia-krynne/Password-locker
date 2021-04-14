@@ -50,6 +50,10 @@ class TestCredentials(unittest.TestCase):
     self.assertTrue(credentials_available)
 
 
+  def test_show_credentials(self):
+    self.assertEqual(Credentials.show_credentials(),Credentials.credentials_list)
+    
+
 
 
 
