@@ -60,7 +60,7 @@ def main():
             while True:
                     print("Action: 1 - create a new credentials,2- show credentials, 3- find  credentials 4- exit",)
 
-                    short_code = input().number()
+                    short_code = int(input())
 
                     if short_code == '1':  #created  and  saved the  credentials
                             print("new_credentials")
@@ -80,8 +80,8 @@ def main():
                             print ('\n')
                             print(f" new Credentials {name} {website} {password} created")
                             print ('\n')
-                    elif short_code == "2":
-                        if show_credentials():
+                    elif short_code == '2':
+                            if show_credentials():
                                     print("Here  you  go ^_^")
                                     print('\n')
 
@@ -106,21 +106,20 @@ def main():
 
                                     print(f"name .......{find_credential.name}")
                                     print(f"website.......{find_credential.website}")
-                                      print(f"password.......{find_credential.password}")
+                                    print(f"password.......{find_credential.password}")
                                    
                             else:
                                     print("That  entry does not exist")
-                     elif short_code == "4:
+                    elif short_code == '4':
                             print("Bye  have  a  swell  day .......")
                             break
-                            else:
+                    else:
                             print("I really didn't get that. Please use the short codes")
-                            
+
                             
 
                     
 if __name__ == '__main__':
-
     main()
 
 
