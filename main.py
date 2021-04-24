@@ -24,7 +24,7 @@ def find_user_by_email(email):
 
 
 def new_credentials(credentials):
-    new_credentials = Credentials(name, website, password)
+    new_credentials = Credentials
     return new_credentials
 
 
@@ -32,7 +32,7 @@ def save_credentials(credentials):
     '''
     Function to save a credential
     '''
-    Credentials.save_credentials()
+    Credentials.save_credentials(Credentials)
 
 
 def remove_credentials(credentials):
@@ -124,13 +124,13 @@ def main():
 				print("password ...")
 				password = input()
 
-				save_credentials(new_credentials(name, website, password)) 
+				save_credentials(new_credentials(Credentials)) 
 				print('\n')
 				print(f" new Credentials {name} {website} {password} created")
 				print('\n')
 
 			elif short_code == 'sc':
-				if show_credentials(credentials):
+				if show_credentials():
 						print("Here  you  go ^_^")
 						print('\n')
 
