@@ -3,11 +3,11 @@ from user import User
 from credentials import Credentials
 
 
-def create_user(first_name, last_name, email, password):
+def create_user(username ,password ):
     '''
     Function to create a new user
     '''
-    new_user = User()
+    new_user = User(username,password)
     return new_user
 
 
@@ -23,12 +23,12 @@ def find_user_by_email(email):
     return User.find_user_by_email
 
 
-def new_credentials(credentials):
-    new_credentials = Credentials
+def new_credentials(username,website,password):
+    new_credentials = (username,website,password)
     return new_credentials
 
 
-def save_credentials(credentials):
+def save_credentials(new_credentials):
     '''
     Function to save a credential
     '''
@@ -50,7 +50,7 @@ def credentials_available(website):
     """
 
 
-def show_credentials(credentials):
+def show_credentials():
     return Credentials.show_credentials
 
 
@@ -75,14 +75,12 @@ def main():
 
 			if confirm_user_pasword != created_user_password:
 				print("invalid!!! password did not match")
-				print("enter created password")
-				created_user_password = input()
-				print("confirm password")
-				confirm_user_pasword = input()
+				#print("enter created password")
+				#created_user_password = input()
+				#print("confirm password")
+				#confirm_user_pasword = input()
 
 			else:
-				print("congratulations{created_user_name}! account  creation  succesfull")
-				print('\n')
 				print("proceed to  log in")
 				print('\n')
 
@@ -96,12 +94,11 @@ def main():
 			print('\n')
 
 			if created_user_name != created_user_name or created_user_password != created_user_password:
-				print("invalid entry")
-				print("enter username")
-
+				print("invalid entry, enter valid user name ")
+			
 				created_user_name = input()
 
-				print("enter password")
+				print("enter valid password")
 				created_user_password = input()
 				print('\n')
 			else:
@@ -124,7 +121,7 @@ def main():
 				print("password ...")
 				password = input()
 
-				save_credentials(new_credentials(Credentials)) 
+				save_credentials(new_credentials(name,website,password)) 
 				print('\n')
 				print(f" new Credentials {name} {website} {password} created")
 				print('\n')
